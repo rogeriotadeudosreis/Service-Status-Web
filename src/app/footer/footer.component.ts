@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  title_rodape: string = "Rogério Tadeu dos Reis"
+
   constructor() { }
 
   ngOnInit(): void {

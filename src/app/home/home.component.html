@@ -1,1 +1,18 @@
-<p>home works!</p>
+<p-table [value]="status" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Autorizador</th>
+      <th>Status</th>
+      <th>Data-Consulta</th>
+      <th>Indisponível</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-stat>
+    <tr>
+      <td>{{stat.authorizing}}</td>
+      <td>{{stat.statusServico}}</td>
+      <td>{{stat.consultationDate}}</td>
+      <td>{{stat.unavailable}}</td>
+    </tr>
+  </ng-template>
+</p-table>

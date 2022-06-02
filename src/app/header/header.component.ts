@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  title: string =  "Api para Visão Geral de Disponibilidade dos Serviços NFE";
   constructor() { }
 
   ngOnInit(): void {
