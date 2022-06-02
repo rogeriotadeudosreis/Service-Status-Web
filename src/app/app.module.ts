@@ -5,9 +5,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {PrimengModule} from "./primeng/primeng.module";
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
+import {HeaderComponent} from './header/header.component';
+import {FooterComponent} from './footer/footer.component';
+import {HomeComponent} from './home/home.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -20,10 +21,11 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    PrimengModule
+    PrimengModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}
+

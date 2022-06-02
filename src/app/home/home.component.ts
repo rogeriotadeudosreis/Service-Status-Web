@@ -9,18 +9,27 @@ import {ServiceStatus} from "../model/service-status";
 })
 export class HomeComponent implements OnInit {
 
-  status: ServiceStatus[] = [
-    {"authorizing": "RS"},
-    {"statusServico": "imagens/bola_verde_P.png"},
-    {"consultationDate": new Date()},
-    {"unavailable": 1}
-  ];
+  status: ServiceStatus[] = [];
 
-  constructor() {
+
+  constructor(private service: StatusService) {
   }
 
   ngOnInit(): void {
-    this.status;
+    this.getAllStatus();
+  }
+
+  getAllStatus(): void {
+    this.service.read().subscribe(
+      (resposta: any) => {
+        this.status = resposta.content;
+        // this.datasource = new MatTableDataSource(this.usuarios);
+        // this.snackbarService.showSuccess('Registro carregados com sucesso!');
+      },
+      (err) => {
+        console.log('Erro ao carregar lista de statuss');
+      }
+    );
   }
 
 }
