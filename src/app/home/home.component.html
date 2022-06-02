@@ -2,17 +2,27 @@
   <ng-template pTemplate="header">
     <tr>
       <th>Autorizador</th>
-      <th>Status</th>
       <th>Data-Consulta</th>
+      <th>Status</th>
       <th>Indisponível</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-stat>
     <tr>
       <td>{{stat.authorizing}}</td>
-      <td>{{stat.statusServico}}</td>
-      <td>{{stat.consultationDate}}</td>
-      <td>{{stat.unavailable}}</td>
+      <td>{{stat.consultationDate | date: "dd/MM/yyyy HH:mm"}}</td>
+      <td *ngIf="bolaVerde; else indisponivel">
+        <i class="pi pi-circle" style="font-size: 2rem;
+        background-color: limegreen;
+        border-radius: 50%"></i>
+      </td>
+      <td>{{stat.unavailable | uppercase}}</td>
     </tr>
+  </ng-template>
+
+  <ng-template #indisponivel>
+    <i class="pi pi-circle" style="font-size: 2rem;
+        background-color: red;
+        border-radius: 50%"></i>
   </ng-template>
 </p-table>
